@@ -11,8 +11,8 @@ function App() {
     <BrowserRouter basename='/projectpasxi'>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Eror />} />
-        <Route path="*" element={<h1>wlee</h1>} />
+        <Route path="/login" element={<Eror />} />
+        <Route path="*" element={<Eror/>} />
       </Routes>
     </BrowserRouter>
 
