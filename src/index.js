@@ -2,12 +2,31 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-// import reportWebVitals from './reportWebVitals';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Home from './Home';
+import Eror from './eror/Eror';
+
+const router = createBrowserRouter(
+  [
+  {
+    path: "/projectpasxi/",
+    element: <App/>,
+    errorElement:<Eror/>,
+  },
+  {
+    path: "/projectpasxi/home",
+    element: <Home/>
+  },
+]);
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+   <App />
   </React.StrictMode>
 );
 
