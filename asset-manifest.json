@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/projectpasxi/static/css/main.19268e14.css",
-    "main.js": "/projectpasxi/static/js/main.e657622d.js",
+    "main.css": "/projectpasxi/static/css/main.d3748db2.css",
+    "main.js": "/projectpasxi/static/js/main.4c067e7d.js",
     "static/media/404.png": "/projectpasxi/static/media/404.30cebbf56067c3422ebe.png",
     "static/media/travel.png": "/projectpasxi/static/media/travel.fbdb253f89efa95da931.png",
     "static/media/logo.svg": "/projectpasxi/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/projectpasxi/index.html",
-    "main.19268e14.css.map": "/projectpasxi/static/css/main.19268e14.css.map",
-    "main.e657622d.js.map": "/projectpasxi/static/js/main.e657622d.js.map"
+    "main.d3748db2.css.map": "/projectpasxi/static/css/main.d3748db2.css.map",
+    "main.4c067e7d.js.map": "/projectpasxi/static/js/main.4c067e7d.js.map"
   },
   "entrypoints": [
-    "static/css/main.19268e14.css",
-    "static/js/main.e657622d.js"
+    "static/css/main.d3748db2.css",
+    "static/js/main.4c067e7d.js"
   ]
 }
