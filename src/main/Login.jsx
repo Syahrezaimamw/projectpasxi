@@ -69,7 +69,7 @@ const Login = () => {
             
         </div>
             <div className='flex flex-col-reverse justify-between md:flex-row wrapper2'>
-                <div className='w-full md:w-[40%]  px-3 sm:px-5  lg:px-5 xl:px-0 flex flex-col items-center justify-center md:min-h-[100vh]  h-full'>
+                <div className='w-full md:w-[40%]  px-5 sm:px-5  lg:px-5 xl:px-0 flex flex-col items-center justify-center md:min-h-[100vh]  h-full'>
                     <div className='w-full md:w-[78%]'>
                         <h1 className=' hidden md:block text-3xl font-bold text-[#355B3E]'>LOGO</h1>
                         <h1 className='mt-10 text-[20px] md:text-2xl font-semibold text-[#355B3E]'>Artificial Intelligence giving you travel recommendations</h1>
