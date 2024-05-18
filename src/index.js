@@ -6,21 +6,21 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Home from './Home';
+// import Home from './Home';
 import Eror from './eror/Eror';
 
-const router = createBrowserRouter(
-  [
-  {
-    path: "/projectpasxi/",
-    element: <App/>,
-    errorElement:<Eror/>,
-  },
-  {
-    path: "/projectpasxi/home",
-    element: <Home/>
-  },
-]);
+// const router = createBrowserRouter(
+//   [
+//   {
+//     path: "/projectpasxi/",
+//     element: <App/>,
+//     errorElement:<Eror/>,
+//   },
+//   {
+//     path: "/projectpasxi/home",
+//     element: <Home/>
+//   },
+// ]);
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
