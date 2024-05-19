@@ -78,7 +78,7 @@ const Login = () => {
                 <h1>LOGO</h1>
             </div>
             <div className='z-10 flex flex-col-reverse justify-between md:flex-row wrapper2'>
-                <div className='w-full md:w-[40%]  px-5 sm:px-5  lg:px-5 xl:px-0 flex flex-col items-center justify-center md:min-h-[100vh]  h-full'>
+                <div className='w-full md:w-[40%] bg-white px-5 sm:px-5  lg:px-5 xl:px-0 flex flex-col items-center justify-center md:min-h-[100vh]  h-full'>
                     <div className='w-full md:w-[78%]'>
                         <h1 className=' hidden md:block text-3xl font-bold text-[#355B3E]'>LOGO</h1>
                         <h1 className='mt-7 md:mt-10 text-[20px] md:text-2xl font-semibold text-[#355B3E]'>Artificial Intelligence giving you travel recommendations</h1>
@@ -86,11 +86,11 @@ const Login = () => {
                         <form action="" className='mt-4'>
                             <label htmlFor="email" className='text-[#2F3D4C] font-medium' >Email</label>
                             <div className='flex items-center w-full mt-1 mb-4 overflow-hidden bg-white rounded-md bx'>
-                                <input type="text" onChange={(e) => handleChange(e)} id='email' ref={emailref} placeholder='masukan email' className='w-full py-[8px] outline-none ps-2' />
+                                <input type="text" onChange={(e) => handleChange(e)} id='email' ref={emailref} placeholder='masukan email' className='w-full py-[8px] bg-white outline-none ps-2' />
                             </div>
                             <label htmlFor="password" className='text-[#2F3D4C] font-medium' >Password</label>
                             <div className='flex items-center mt-1 mb-4 overflow-hidden bg-white rounded-md justify-betweenll just bx'>
-                                <input ref={passwordref} type={visible ? "text" : "password"} onChange={(e) => handleChange(e)} id='password' placeholder='masukan password' className='w-[90%] py-[8px] outline-none ms-2' />
+                                <input ref={passwordref} type={visible ? "text" : "password"} onChange={(e) => handleChange(e)} id='password' placeholder='masukan password' className='w-[90%] bg-white py-[8px] outline-none ms-2' />
                                 {
                                     visible ?
                                         <FaEyeSlash className='text-[#2F3D4C]' onClick={handleShowpassword} />
