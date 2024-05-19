@@ -12,6 +12,7 @@ const Login = () => {
     const emailref = useRef(null)
     const passwordref = useRef(null)
     const [loadingIn, setLoadingIn] = useState(false)
+    const [noTerdaftar, setNoterdatar] = useState(false)
     const [loadingOut, setLoadingOut] = useState(false)
     const [visible, setVisible] = useState(false)
     const [dataInput, setDatainput] = useState({
@@ -48,6 +49,7 @@ const Login = () => {
     }
     //proses memvalidasi input login
     async function validasi() {
+        setLoadingIn(true)
         getLogin(dataInput, () => {
             localStorage.setItem('statusLogin', true)
             setTimeout(() => {
@@ -55,7 +57,10 @@ const Login = () => {
                 window.location.href = '/projectpasxi/home'
                 setLoadingIn(false)
             }, 2000)
-        }, setLoadingIn)
+        }, () => {
+            setLoadingIn(false)
+            setNoterdatar(true)
+        })
     }
 
     //proses logout
@@ -99,6 +104,8 @@ const Login = () => {
 
 
                         </form>
+                        {noTerdaftar ? <p className='mb-2 text-[15px] text-red-500'>Akun tidak terdaftar</p>
+                            : <></>}
                         <div className='w-full h-[1px] bg-[#355B3E]'></div>
                         <div className='flex justify-between mt-3'>
                             <ButtonLogin type={true} onClick={submit}>{loadingIn ? <Laodlogin /> : 'Login'}</ButtonLogin>

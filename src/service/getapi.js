@@ -1,5 +1,4 @@
 export const getLogin = async (dataInput,callback,load) =>{
-    load(true)
     return await fetch('https://dummyjson.com/users')
     .then(res => res.json())
     .then(res => {
@@ -10,7 +9,7 @@ export const getLogin = async (dataInput,callback,load) =>{
             callback()
         } else {
             setTimeout(()=>{
-                load(false)
+                load()
             },1000)
         }
         return proses
