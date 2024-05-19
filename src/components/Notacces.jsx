@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import { FaArrowLeft } from "react-icons/fa6";
 const Notacces = () => {
   return (
-    <div className='flex items-center justify-center min-h-[100dvh] bg-white wrapper '>
+    <div className='flex items-center justify-center min-h-[100dvh] bg-white dark:bg-white wrapper '>
         <div className='flex flex-col items-center'>
             <img src={padlock} alt="" />
             <h1 className='mt-2 text-xl font-semibold text-center'>Not Acces</h1>

@@ -3,7 +3,7 @@ import gambarerr from '../images/404.png'
 import { FaArrowLeft } from "react-icons/fa6";
 const Eror = () => {
   return (
-    <div className='flex flex-col justify-between text-lg md:flex-row wrapper'>
+    <div className='flex flex-col justify-between text-lg bg-white md:min-h-[100vh] dark:bg-white d md:flex-row wrapper'>
       <div className='flex items-center justify-center mt-10 md:mt-0 '>
         <div className='flex flex-col items-center gap-5 md:items-start'>
           <h1 className='text-4xl font-bold text-center md:text-start'>Oops...</h1>
