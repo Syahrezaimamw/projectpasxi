@@ -6,7 +6,7 @@ export const getLogin = async (dataInput,callback,load) =>{
         const proses = data.find((e) => e.email == dataInput.email && e.password == dataInput.password)
 
         if (proses != undefined) {
-            callback()
+            callback(proses)
         } else {
             setTimeout(()=>{
                 load()

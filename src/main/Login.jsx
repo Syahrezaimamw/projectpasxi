@@ -50,8 +50,9 @@ const Login = () => {
     //proses memvalidasi input login
     async function validasi() {
         setLoadingIn(true)
-        getLogin(dataInput, () => {
+        getLogin(dataInput, (data) => {
             localStorage.setItem('statusLogin', true)
+            localStorage.setItem('dataLoginVila', JSON.stringify(data))
             setTimeout(() => {
                 resetInput()
                 window.location.href = '/projectpasxi/home'
@@ -69,6 +70,7 @@ const Login = () => {
         setTimeout(() => {
             resetInput()
             localStorage.removeItem('statusLogin')
+            localStorage.removeItem('dataLoginVila')
             setLoadingOut(false)
         }, 2000)
     }

@@ -9,3 +9,7 @@
 .wrapper2 {
  @apply  max-w-7xl m-auto
 } 
+
+.bx {
+   /* @apply  shadow-md  */
+}
