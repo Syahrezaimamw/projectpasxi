@@ -11,7 +11,12 @@ const ListNav = ({ show, link, setShow }) => {
 
     const data = [
         {
-            nama: 'Kelola Vila',
+            nama: 'Home',
+            href: '/home',
+            ic:<FaHouse/>
+        },
+        {
+            nama: 'Kelola Villa',
             href: '/vila',
             ic:<FaHouse/>
         },
