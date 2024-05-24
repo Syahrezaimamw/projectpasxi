@@ -3,7 +3,7 @@ import { postDataPenyewa } from '../service/postapi'
 import Input from './Input'
 import Loading from './Loading'
 
-const ModalPenyewa = ({ show, setShow, setModalTr, setIdPenyewa }) => {
+const ModalPenyewa = ({ show, setShow, setModalTr, setIdPenyewa,setNamaPenyewa }) => {
     const [dataInput, setDataInput] = useState([])
     const [loadingNext, setLoadingNext] = useState(false)
     const [loadingClose, setLoadingClose] = useState(false)
@@ -21,8 +21,9 @@ const ModalPenyewa = ({ show, setShow, setModalTr, setIdPenyewa }) => {
     function handleSubmit(e) {
         e.preventDefault()
         setLoadingNext(true)
-        postDataPenyewa(dataInput, (idPenyewa) => {
+        postDataPenyewa(dataInput, (idPenyewa,namaPenyewa) => {
             setIdPenyewa(idPenyewa)
+            setNamaPenyewa(namaPenyewa)
             setModalTr(true)
             setShow(false)
             setLoadingNext(false)

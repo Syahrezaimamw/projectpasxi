@@ -27,7 +27,6 @@ const Modaladd = ({ show, setMl }) => {
         setMl(false)
 
     }
-    console.log(dataInput)
 
 
 

@@ -9,6 +9,8 @@ import Notacces from '../components/Notacces'
 import Btn from '../components/Btn'
 import { FaTrash } from "react-icons/fa6";
 import { FaPen } from "react-icons/fa6";
+import Skeleton from 'react-loading-skeleton'
+
 const PerVila = () => {
     const [status, setStatus] = useState(localStorage.statusLogin ? localStorage.getItem('statusLogin') : false)
     const { id } = useParams()
@@ -20,6 +22,7 @@ const PerVila = () => {
     const [showModalP, setModalP] = useState(false)
     const [modalTr, setModalTr] = useState(false)
     const [idPenyewa, setIdPenyewa] = useState()
+    const [namaPenyewaa, setNamaPenyewa] = useState()
     function handleShowM() {
         !showModalP ? setModalP(true) : setModalP(false)
     }
@@ -45,13 +48,13 @@ const PerVila = () => {
                             <div className='w-[calc(100%-430px)] ms-1 flex flex-col justify-between h-[400px] '>
                                 <div>
 
-                                    <h1 className='text-6xl font-bold text-black/80'  >{data ? data.namaVila : '...'}</h1>
+                                    <h1 className='text-6xl font-bold text-black/80'  >{data ? data.namaVila : <Skeleton/>}</h1>
                                     <p className='mt-3 text-2xl font-semibold text-black/80' >{data ? new Intl.NumberFormat('id-ID', {
                                         style: 'currency',
                                         currency: 'IDR',
-                                    }).format(data.harga) : '00'}</p>
-                                    <p className='mt-2'>{data ? data.alamat : '..'}</p>                                <p className='mt-1'>{data ? data.status ? 'full' : 'Available' : '...'}</p>
-                                    <h1 className='text-wrap w-[93%] mt-2'>{data ? data.deskripsi : '...'} Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, itaque atque! Accusantium quo, voluptates nobis dolorum nulla cum eaque consectetur et ut nesciunt tempore officia. Provident cum placeat accusantium praesentium!</h1>
+                                    }).format(data.harga) : <Skeleton/>}</p>
+                                    <p className='mt-2'>{data ? data.alamat : <Skeleton/>}</p>                                <p className='mt-1'>{data ? data.status ? 'full' : 'Available' : <Skeleton className='w-[100px]'/>}</p>
+                                    <h1 className='text-wrap w-[93%] mt-2'>{data ? data.deskripsi+' Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit, itaque atque! Accusantium quo, voluptates nobis dolorum nulla cum eaque consectetur et ut nesciunt tempore officia. Provident cum placeat accusantium praesentium!' : <Skeleton count={5}/>}</h1>
                                 </div>
                                 <div className='flex items-end justify-between w-full me-2'>
                                     <div className='flex gap-5 mb-3 text-xl text-gray-500 '>
@@ -71,10 +74,10 @@ const PerVila = () => {
                             </div>
                         </div>
                     </div>
-                    <ModalPenyewa show={showModalP} setShow={setModalP} setIdPenyewa={setIdPenyewa} setModalTr={setModalTr} />
+                    <ModalPenyewa show={showModalP} setShow={setModalP} setIdPenyewa={setIdPenyewa} setNamaPenyewa={setNamaPenyewa} setModalTr={setModalTr} />
                     {idPenyewa ?
 
-                        <Modaltr modalTr={modalTr} setModalTr={setModalTr} idVila={id} hargavila={data.harga} idPenyewa={idPenyewa} />
+                        <Modaltr modalTr={modalTr} setModalTr={setModalTr} idVila={id} namaVila={data.namaVila} namaPenyewaa={namaPenyewaa} hargavila={data.harga} idPenyewa={idPenyewa} />
                         : <></>
                     }
 

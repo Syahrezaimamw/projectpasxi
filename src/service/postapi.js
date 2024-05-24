@@ -9,7 +9,7 @@ export const postDataPenyewa = async (data,callback) => {
     }
     )
         .then(res => res.json())
-        .then(a => callback(a.idPenyewa))
+        .then(a => callback(a.idPenyewa,a.nama))
         .catch(err => console.log(err));
 }
 
@@ -23,11 +23,13 @@ export const postDataTs = async (data,total,callback,idFood,totalCatering) => {
         body: JSON.stringify({
             idVila: data.idVila,
             idPenyewa: data.idPenyewa,
+            idAdmin:data.idAdmin,
             idCatering:idFood,
             hargaCatering:totalCatering,
             tanggalmasuk: data.tanggalmasuk,
             tanggalkeluar: data.tanggalkeluar,
             hargaDenda: 0,
+            namaLaporan:data.namaLaporan,
             KeteranganDenda: [],
             total:total,
 

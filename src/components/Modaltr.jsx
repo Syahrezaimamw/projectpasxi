@@ -9,42 +9,49 @@ import {
   postDataTs
 } from '../service/postapi'
 import { deletePenyewa } from '../service/deleteapi';
-import { getDataCatering, getIdDataVila } from '../service/getapi';
+import { getDataCatering, getDataNamaLaporan, getIdDataVila } from '../service/getapi';
 import { updateVila } from '../service/put';
 import Loading from './Loading';
 import Inputstatic from './Inputstatic';
-const Modaltr = ({ modalTr, setModalTr, idVila, hargavila, idPenyewa }) => {
+const Modaltr = ({ modalTr, setModalTr, idVila, hargavila, idPenyewa,namaVila,namaPenyewaa }) => {
+  //food
   const [idFood,setidf]=useState(0)
+  const [food, setDataFood] = useState([])
+  const [inputfood, setinputFood] = useState('')
+  const [conditionfood,setConditionFood]=useState(true)
+
+  //total harga
   const [s, setselisih] = useState(0)
   const [hargaf,setHargaf]=useState(0)
+
+  //loadingButton
   const [loadingNext, setLoadingNext] = useState(false)
   const [loadingCLose, setLoadingClose] = useState(false)
-  const [food, setDataFood] = useState([])
-  const [conditionfood,setConditionFood]=useState(true)
-  const [inputfood, setinputFood] = useState('')
+
+  
+  //data
+  const [dataPer, setDataPer] = useState()
   const [dataInput, setDataInput] = useState({
     idVila: idVila,
     idPenyewa: idPenyewa,
+    namaLaporan:`Laporan ${namaVila}, Atas Nama ${namaPenyewaa}`,
     tanggalmasuk: '',
     tanggalkeluar: '',
     jumlahDenda: 0,
     KeteranganDenda: [],
+    idAdmin:1
   })
-  const [dataPer, setDataPer] = useState()
+
   useEffect(() => {
     getIdDataVila(idVila).then((a) => setDataPer(a))
-
   }, [])
 
   function handleChangefilter(e) {
     setinputFood(e.target.value)
-    // e.target.value = dataInput
   }
   useEffect(() => {
     getDataCatering(inputfood).then(res => setDataFood(res))
-
   }, [inputfood])
-  console.log(food)
 
   //fungsi input
   function handleChange(e) {
@@ -62,8 +69,6 @@ const Modaltr = ({ modalTr, setModalTr, idVila, hargavila, idPenyewa }) => {
     return tanggalo.diff(tanggals, 'days') // 1
 
   }
-
-  
   
   //fungsi proses selisih
   useEffect(() => {
@@ -79,7 +84,6 @@ const Modaltr = ({ modalTr, setModalTr, idVila, hargavila, idPenyewa }) => {
     }
   }, [dataInput,inputfood])
 
-console.log(hargaf)
   //add Data Transaksi
   function handleSubmit(e) {
     e.preventDefault()
@@ -102,6 +106,8 @@ console.log(hargaf)
     setidf(id)
     
   }
+
+
   return (
     <div>
       <>
@@ -117,7 +123,7 @@ console.log(hargaf)
               {/* Modal header */}
               <div className="flex items-center justify-between p-4 border-b rounded-t md:p-5 dark:border-gray-600">
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                  Sign in to our platform
+                  Buat data chek in
                 </h3>
 
               </div>
